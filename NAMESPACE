@@ -1,0 +1,2 @@
+export("standscore","R2","plotscore")
+import(survival,graphics,splines)
