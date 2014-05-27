@@ -9,10 +9,10 @@ plotscore(s, printCB = FALSE , component.num = 1:dim(s[[1]])[2], main = "" ,
 }
 
 \arguments{
-  \item{s}{ A list resulting of an appeal to the function standscore. This corresponds to the process and, possibly, its confidence bands. }
+  \item{s}{ A list resulting from a call to the function standscore which corresponds to the process and, possibly, its confidence bands. }
   \item{printCB}{Set printCB = TRUE for plotting the confidence bands. Default is printCB = FALSE.
 }
-  \item{component.num}{ A vector of length at most the number of covariates. Indicates which components of the process to plot. For example, set component.num=c(2,3) for plotting the second and third components. By default, all components are plotted.}
+  \item{component.num}{ A vector of length lower than the number of covariates. Indicates which components of the process to plot. For example, set component.num=c(2,3) for plotting the second and third components. By default, all components are plotted.}
 
   \item{main,xlab,ylab,ylim}{ Classical arguments for plotting. See help(plot). }
 }

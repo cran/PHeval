@@ -2,7 +2,7 @@
 \alias{standscore}
 \title{Standardized Score Process}
 \description{
-This function evaluates the standardized score process of OQuigley (2003). The process helps to visualize the shape of the effects of explanatory variables of survival times and the goodness of fit of the proportional hazards model. }
+This function evaluates the standardized score process of OQuigley (2003). The process helps evaluating the goodness of fit of the proportional hazards model and visualizing the shape of time-dependent effects.}
 \usage{
 standscore(formula, data, globstan = TRUE, beta0 = 0)
 }
@@ -11,7 +11,7 @@ standscore(formula, data, globstan = TRUE, beta0 = 0)
 A formula object or character string with the time and censoring status separated by "+" on the left hand side and the covariates separated by "+" on the right. For instance, if the time name is "Time", the censoring status is "Status" and the covariates are "Cov1" and "Cov2", the formula is "Time+Status~Cov1+Cov2".
 }
   \item{data}{ 
-  A data.frame with the data. The censoring status should by 1 for failure and 0 for censoring. No missing data accepted. } 
+  A data.frame with the data. The censoring status should be 1 for failure and 0 for censoring. No missing data accepted. } 
  \item{globstan}{
    	With one covariate in the model, globstan has no effect. With several covariates, 
    	\itemize{ 
@@ -34,9 +34,10 @@ The program does not handle ties in the data. We suggest to randomly split the t
 }
 \references{	
 		\tabular{l}{
-OQuigley, J. (2008) Proportional hazards regression. Springer New-York. Chapter 8. \cr	
+\cr
+OQuigley, J. (2008) \emph{Proportional hazards regression}. Springer New-York. Chapter 8. \cr	
 OQuigley, J. (2003) Khmaladze-Type Graphical Evaluation of the Proportional Hazards Assumption.\cr 
-Biometrika  90, 577-594 
+\emph{Biometrika} \bold{90}, 577-594 
 				}
 }
 \author{
