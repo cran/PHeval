@@ -50,8 +50,7 @@ plotscore(score2,printCB=TRUE,component.num=2,main="rx")
 #############################################
 # Evaluation and plot of the standardized score process at parameter beta0 = 0
 # without global standardization 
-fo="futime+fustat~age+rx"
-score3=standscore(fo,data=ovarian,globstan=FALSE)
+score3=standscore(futime+fustat~age+rx,data=ovarian,globstan=FALSE)
 plotscore(score3)	
 
 }

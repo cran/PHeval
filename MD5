@@ -1,7 +1,7 @@
-2f33a83704b5852d17fccadcce521b37 *DESCRIPTION
-0d2b983b9d5db544fa156e1a8ebbf330 *NAMESPACE
+4489f86c6df511eaadfebe6a7af1d007 *DESCRIPTION
+3aa0e940520225feb37388a05f728d76 *NAMESPACE
 e797b81e7953c14f8f97dbdb7fa771f6 *R/PHeval.R
 db81ef910ccc5d667a8c92abb765f29d *man/PHeval-package.Rd
 c1bb0abfe9e202536b2a282fb9287985 *man/R2.Rd
-d029eb6ea2558e512e8493eebb2f762f *man/plotscore.Rd
+0d3391fd048a6f83241f4970d20df3ad *man/plotscore.Rd
 bfdd76e520a50b47d7946fa91f84201b *man/standscore.Rd
