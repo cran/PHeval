@@ -22,9 +22,11 @@ Cecile Chauvel <cecile.chauvel@upmc.fr>
 }
 \references{
 	\tabular{l}{\cr
+	
+Chauvel, C. and OQuigley, J. (2014) Tests for comparing estimated survival functions. \emph{Biometrika} \cr \bold{101}, 535-552. https://doi.org/10.1093/biomet/asu015 \cr
+Chauvel, C. and OQuigley, J. (2017) Survival model construction guided by fit and predictive strength.  \cr \emph{Biometrics} \bold{73}, 483-494. https://doi.org/10.1111/biom.12611 \cr
 OQuigley, J. (2008) \emph{Proportional hazards regression}. Springer New-York. \cr		
-OQuigley, J. (2003) Khmaladze-Type Graphical Evaluation of the Proportional Hazards Assumption.  \cr \emph{Biometrika} \bold{90}, 577-594 \cr 
-OQuigley J, Flandre P. (1994) Predictive capability of proportional hazards regression. \emph{PNAS} \bold{91}. \cr
+OQuigley J, Flandre P. (1994) Predictive capability of proportional hazards regression. \emph{PNAS} \bold{91}, 2310-2314. \cr
 			}
 }
 

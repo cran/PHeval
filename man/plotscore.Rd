@@ -18,7 +18,7 @@ plotscore(s, printCB = FALSE , component.num = 1:dim(s[[1]])[2], main = "" ,
 }
 
 \author{
-Cecile Chauvel <cecile.chauvel@imag.fr>
+Cecile Chauvel <chauvel.cecile@gmail.com>
 }
 
 \seealso{

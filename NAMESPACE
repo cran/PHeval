@@ -1,3 +1,3 @@
-export("standscore","R2","plotscore")
-import(survival,graphics,splines)
+export("plotscore","R2","standscore")
+import(survival, graphics, splines)
 importFrom("stats", "as.formula")
