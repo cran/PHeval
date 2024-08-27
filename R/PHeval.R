@@ -134,6 +134,22 @@ return(ret)
 }
 
 
+integrale=function(x,y){
+  idx = 2:length(x)
+  return (as.double( (x[idx] - x[idx-1]) %*% (y[idx] + y[idx-1])) / 2)}
+
+
+pvalmax=function(stat,p,n_rep)
+{
+  Y=rmvnorm(n_rep,mean=c(0,0,0,0),sigma=matrix(c(1,0,sqrt(3)/2,0,0,1,0,sqrt(3)/2,sqrt(3)/2,0,1,0,0,sqrt(3)/2,0,1),ncol=4))
+  U1=Y[,1]
+  U2=Y[,2]
+  A1=Y[,3]
+  A2=Y[,4]
+  return(1-mean(((U1^2+U2^2)<=stat)*((A1^2+A2^2)<=stat)))
+}
+
+
 ###################################################################
 # public functions
 
@@ -253,8 +269,6 @@ return(1-sum(Rb)/sum(R0))
 
 plotscore=function(s,printCB = FALSE,component.num = 1:dim(s[[1]])[2] ,main = "" ,xlab = "Time" ,ylab = "Standardized score" ,ylim)
 {
-
-
 if(dim(s$Score)[2]==1)
 	{
 	if(missing(ylim)) ylim=range(c(s))
@@ -289,3 +303,45 @@ else
 
 
 
+testscore=function(formula,data,beta0=0,n_rep=10^6,digits=5)
+{ 
+  if(as.integer(n_rep)!=n_rep) stop("Parameter n_rep must be integer")
+  if(n_rep<10^5) stop("Parameter n_rep must be higher than 10^5")
+  if(as.integer(digits)!=digits) stop("Parameter digits must be integer")
+  # tests on other parameters provided in the function standscore  
+  
+  score=standscore(formula,data,globstan=FALSE,beta0)$Score
+  
+  test=matrix(NA,ncol=2,nrow=3)
+  rownames(test)=c("Distance","AUC","Restrained adaptive")
+  colnames(test)=c("Statistic","pvalue")
+  p=dim(score)[2]
+  if(p==1)
+  { 
+    score=as.vector(score)
+    k=length(score)-1
+    J=integrale(0:k/k,score)*sqrt(3)
+    p_J=2*(1-pnorm(abs(J)))
+    U=score[k+1]
+    p_U=2*(1-pnorm(abs(U)))
+    T_max=max(abs(J),abs(U))
+    p_max=1-pmvnorm(lower=rep(-T_max,2),upper=rep(T_max,2),mean=0,sigma=matrix(c(1,sqrt(3)/2,sqrt(3)/2,1),ncol=2))[1]
+  }
+  
+  else {  
+    Jaux=c()
+    k=dim(score)[1]-1
+    U=sum(score[k+1,]^2)
+    for(i in 1 : p)
+      Jaux[i]=integrale(0:k/k,score[,i])
+    J=3*sum(Jaux^2)
+    T_max=max(abs(J),abs(U))
+    p_U=1-pchisq(U,df=p)
+    p_J=1-pchisq(J,df=p)
+    p_max=pvalmax(T_max,p,digits)
+  }
+  
+  test[,1]=c(U,J,T_max)
+  test[,2]=c(p_U,p_J,p_max)
+  return(round(test,digits))
+}

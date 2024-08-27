@@ -2,7 +2,7 @@
 \alias{standscore}
 \title{Standardized Score Process}
 \description{
-This function evaluates the standardized score process of OQuigley (2003). The process helps evaluating the goodness of fit of the proportional hazards model and visualizing the shape of time-dependent effects.}
+This function evaluates the standardized score process. The process helps evaluating the goodness of fit of the proportional hazards model and visualizing the shape of time-dependent effects.}
 \usage{
 standscore(formula, data, globstan = TRUE, beta0 = 0)
 }
@@ -19,7 +19,7 @@ A formula object or character string with the time and censoring status separate
    		\item if globstan = FALSE, no standardization is applied. In this case, the components of the process are dependent and do not reflect the shapes of the cumulative effects. The confidence bands are not given. The use of globstan = FALSE is aimed at performing tests of the value of the regression coefficients (null hypothesis : regression parameter = beta0).
    	}}
   \item{beta0}{
-a vector of parameters to evaluate the process (by default, parameters set to 0). Its length is the number of covariates. Each value corresponds to the regression coefficient for a covariate, in the same order as appearing in formula. 
+A vector of parameters to evaluate the process (by default, parameters set to 0). Its length is the number of covariates. Each value corresponds to the regression coefficient for a covariate, in the same order as appearing in formula. 
 }  
 
 }
@@ -28,21 +28,20 @@ The program does not handle ties in the data. We suggest to randomly split the t
 \value{
   \item{Score}{A vector or matrix with the value of the standardized score process. Each row corresponds to a failure time, each column to a covariate.
   	}
-  \item{Sigma }{The matrix used for the standardization of the process. Sigma is the estimator of the variance-covariance matrix between the coviates to the power of - 1 / 2. This value is present only with multiple covariates and globstan = TRUE.
+  \item{Sigma }{The matrix used for the standardization of the process. Sigma is the estimator of the variance-covariance matrix between the covariates to the power of - 1 / 2. This value is present only with multiple covariates and globstan = TRUE.
   	}
   \item{confbandCOV}{A matrix with the confidence bands of the process for a constant regression effect associated with the covariate named COV. Each row corresponds to a failure time. The first column is the lower band and the second column is the upper band. This value is present with one covariate or with multiple covariates and globstan = TRUE.  }	
 }
-\references{	
-		\tabular{l}{
-\cr
 
-Chauvel, C. and OQuigley, J. (2014) Tests for comparing estimated survival functions. \emph{Biometrika} \cr \bold{101}, 535-552. https://doi.org/10.1093/biomet/asu015 \cr
-Chauvel, C. and OQuigley, J. (2017) Survival model construction guided by fit and predictive strength. \cr \emph{Biometrics} \bold{73}, 483-494. https://doi.org/10.1111/biom.12611 \cr
-OQuigley, J. (2008) \emph{Proportional hazards regression}. Springer New-York. Chapter 8. \cr	
-				}
+\references{
+	\tabular{l}{\cr
+	Chauvel, C (2014). PhD thesis (in French): Processus empiriques pour l'inf\'erence dans le mod\`ele de survie \`a risques non proportionnels. Universit\'e Pierre et Marie Curie - Paris VI.\cr
+	Chauvel, C, OQuigley, J (2014) Tests for comparing estimated survival functions. \cr \emph{Biometrika} 
+} 
 }
+
 \author{
-Cecile Chauvel <chauvel.cecile@gmail.com>
+Cecile Chauvel
 }
 
 

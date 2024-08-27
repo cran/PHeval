@@ -4,8 +4,8 @@
 \description{
 The function plots the standardized score process. This process is a list resulting of an appeal to the function standscore. }
 \usage{
-plotscore(s, printCB = FALSE , component.num = 1:dim(s[[1]])[2], main = "" ,
- xlab = "Time", ylab = "Standardized score", ylim)
+plotscore(s, printCB = FALSE , component.num = 1:dim(s[[1]])[2], 
+main = "" , xlab = "Time", ylab = "Standardized score", ylim)
 }
 
 \arguments{
@@ -14,12 +14,11 @@ plotscore(s, printCB = FALSE , component.num = 1:dim(s[[1]])[2], main = "" ,
 }
   \item{component.num}{ A vector of length lower than the number of covariates. Indicates which components of the process to plot. For example, set component.num=c(2,3) for plotting the second and third components. By default, all components are plotted.}
 
-  \item{main,xlab,ylab,ylim}{ Classical arguments for plotting. See help(plot). }
+  \item{main,xlab,ylab,ylim}{ Usual arguments for plotting. See help(plot). }
 }
 
 \author{
-Cecile Chauvel <chauvel.cecile@gmail.com>
-}
+Cecile Chauvel}
 
 \seealso{
 \code{\link{standscore}}

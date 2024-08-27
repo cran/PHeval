@@ -27,7 +27,6 @@ where the sums are over the failures. \eqn{E_b(Zi)} is the expectation of \eqn{Z
 \details{ The program does not handle ties in the data. We suggest to randomly split the ties before using the program.
 		}
 \references{
-OQuigley, J. (2008) \emph{Proportional hazards regression}. Springer New-York. Chapter 12. \cr
 OQuigley J, Flandre P. (1994) Predictive capability of proportional hazards regression. \emph{PNAS} \bold{91}, 2310-2314. 
 }
 
