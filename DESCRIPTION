@@ -1,6 +1,6 @@
 Package: PHeval
-Version: 1.0
-Date: 2024-08-27
+Version: 1.1
+Date: 2024-09-02
 Title: Evaluation of the Proportional Hazards Assumption and Test for
         Comparing Survival Curves with a Standardized Score Process
 Authors@R: person(given = "Cecile",
@@ -13,8 +13,8 @@ License: GPL (>= 2.0)
 URL: https://cran.r-project.org/package=PHeval
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2024-08-27 14:42:03 UTC; cecile.chauvel
+Packaged: 2024-09-02 14:00:28 UTC; cecile.chauvel
 Author: Cecile Chauvel [aut, cre]
 Maintainer: Cecile Chauvel <cecile.chauvel@univ-lyon1.fr>
 Repository: CRAN
-Date/Publication: 2024-08-27 15:20:06 UTC
+Date/Publication: 2024-09-02 14:40:03 UTC

@@ -2,17 +2,17 @@
 \alias{plotscore}
 \title{ Plot of the standardized score process}
 \description{
-The function plots the standardized score process. This process is a list resulting of an appeal to the function standscore. }
+The function plots the standardized score process. This process is a list resulting of a call to the function standscore. }
 \usage{
 plotscore(s, printCB = FALSE , component.num = 1:dim(s[[1]])[2], 
 main = "" , xlab = "Time", ylab = "Standardized score", ylim)
 }
 
 \arguments{
-  \item{s}{ A list resulting from a call to the function standscore which corresponds to the process and, possibly, its confidence bands. }
+  \item{s}{ A list resulting from a call to the function standscore which corresponds to the standardized score process and, possibly, its confidence bands. }
   \item{printCB}{Set printCB = TRUE for plotting the confidence bands. Default is printCB = FALSE.
 }
-  \item{component.num}{ A vector of length lower than the number of covariates. Indicates which components of the process to plot. For example, set component.num=c(2,3) for plotting the second and third components. By default, all components are plotted.}
+  \item{component.num}{ A vector of length equals to or lower than the number of covariates. It indicates which components of the process to plot. For example, set component.num=c(2,3) for plotting the second and third components. By default, all components are plotted.}
 
   \item{main,xlab,ylab,ylim}{ Usual arguments for plotting. See help(plot). }
 }

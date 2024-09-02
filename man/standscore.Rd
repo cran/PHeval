@@ -2,7 +2,7 @@
 \alias{standscore}
 \title{Standardized Score Process}
 \description{
-This function evaluates the standardized score process. The process helps evaluating the goodness of fit of the proportional hazards model and visualizing the shape of time-dependent effects.}
+This function evaluates the standardized score process. The process helps for evaluating the goodness of fit of the proportional hazards model and visualizing the shape of time-dependent effects. It is also used in tests of comparison of survival curves.}
 \usage{
 standscore(formula, data, globstan = TRUE, beta0 = 0)
 }
@@ -35,9 +35,8 @@ The program does not handle ties in the data. We suggest to randomly split the t
 
 \references{
 	\tabular{l}{\cr
-	Chauvel, C (2014). PhD thesis (in French): Processus empiriques pour l'inf\'erence dans le mod\`ele de survie \`a risques non proportionnels. Universit\'e Pierre et Marie Curie - Paris VI.\cr
-	Chauvel, C, OQuigley, J (2014) Tests for comparing estimated survival functions. \cr \emph{Biometrika} 
-} 
+	Chauvel, C, OQuigley, J (2014) Tests for comparing estimated survival functions. \emph{Biometrika} \cr \bold{101}, 3, 535 – 552. \cr
+  Chauvel, C (2014). PhD thesis (in French): Processus empiriques pour l'inférence dans le \cr modèle de survie à risques non proportionnels. \cr Université Pierre et Marie Curie - Paris VI.\cr}
 }
 
 \author{
@@ -61,7 +60,7 @@ plotscore(score1,printCB=TRUE)
 
 #############################################
 # Evaluation of the standardized score process at parameter
-# beta0 = maximum partial likelihood estimator of beta
+# beta0 = maximum partial likelihood estimator of beta in the Cox model
 
 beta=coxph(Surv(futime,fustat)~age+rx,data=ovarian)$coeff
 score2=standscore(futime+fustat~age+rx,data=ovarian,beta0=beta)
